@@ -1,0 +1,37 @@
+
+/* Student Fee Management System using classes and objects
+ *   Mugambi William
+ *   BCS-03-0091/2025
+ */
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Student {
+    string name__, admNo__;
+    int    feeBalance__;
+
+  public:
+    void inputStudent(string name, string admNo, int feeBalance)
+    {
+        name__       = name;
+        admNo__      = admNo;
+        feeBalance__ = feeBalance;
+    }
+
+    void makePayment(int amount) { feeBalance__ -= amount; }
+
+    void displayStatus()
+    {
+        cout << "Name: " << name__ << "\nAdm No: " << admNo__ << "\nBalance: " << feeBalance__
+             << "\n";
+    }
+};
+
+int main()
+{
+    Student s;
+    s.inputStudent("Juan Milkah", "BCS-0091", 45000);
+    s.makePayment(23000);
+    s.displayStatus();
+}
